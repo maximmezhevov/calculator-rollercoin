@@ -1,17 +1,141 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <link rel="stylesheet" href="css/style.css">
-  <title>???</title>
+  <title>Калькулятор RollerCoin</title>
 </head>
 <body class="app">
-  <h1 class="h1">hello world!</h1>
-  <div>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed molestias illum ratione facilis sapiente voluptatum quis et itaque corrupti, voluptatem architecto at cumque, mollitia dolorum obcaecati doloribus? Dignissimos, voluptate ex.</p>
-  </div>
+
+  <h1>Калькулятор RollerCoin</h1>
+
+  <table>
+    <tr>
+      <th></th>
+      <th><h3>Время блока</h3></th>
+      <th><h3>Коэффициент вознаграждение за блок</h3></th>
+      <th><h3>Недельный множитель</h3></th>
+      <th><h3>Сетевая мощность<br>Et&#47;s</h3></th>
+      <th>
+        <h3>Общяя мощность</h3>
+        <select class="select__total-power backlight-g" id="DivisionMethod">
+          <option disabled value="">Gh&#47;s</option>
+          <option value="100000">Th&#47;s</option>
+          <option selected value="100">Ph&#47;s</option>          
+        </select>
+      </th>
+      <th><h3>Вознаграждение за блок</h3></th>
+      <th><h3>Вознаграждение за сутки</h3></th>
+      <th><h3>Курс за 1 RLT</h3></th>
+      <th><h3>Вознаграждение за сутки в &#36;&#47;RLT</h3></th>
+    </tr>
+
+    <!-- RLT -->
+    <tr> 
+      <th><h2 class="rlt">RLT</h2></th>
+      <td rowspan="6"><input disabled value="10" class="input__block-time" id="AverageDuration"></td>
+      <td><input disabled value="30" id="RemunerationRate__RLT"></td>
+      <td>
+        <select id="WeeklyMultiplier__RLT">
+          <option selected value="1">1</option>
+          <option disabled value="2">2</option>
+        </select>
+      </td>
+      <td><input required class="backlight-g" type="number" placeholder="RLT" id="NetworkPower__RLT"></td>
+      <td rowspan="6"><input required class="input__total-power can" type="number" placeholder="Общяя мощность" id="TotalPower"></td>
+      <td><p id="BlockReward__RLT"></p></td>
+      <td><p id="DailyReward__RLT"></p></td>
+      <td><input disabled value="1" id="Rate__RLT"></td>
+      <td><p id="DailyRewardСurrency__RLT"></p></td>
+    </tr>
+    <!-- BTC -->
+    <tr>  
+      <th><h2 class="btc">BTC</h2></th>
+      <td><input disabled value="0.00030" id="RemunerationRate__BTC"></td>
+      <td>
+        <select class="backlight-g" id="WeeklyMultiplier__BTC">
+          <option selectedvalue="1">1</option>
+          <option value="2">2</option>
+        </select>
+      </td>
+      <td><input class="backlight-g" type="number" placeholder="BTC" id="NetworkPower__BTC"></td>
+      <td><p id="BlockReward__BTC"></p></td>
+      <td><p id="DailyReward__BTC"></p></td>
+      <td><input class="backlight-g" type="number" placeholder="BTC за 1 RLT" id="Rate__BTC"></td>
+      <td><p id="DailyRewardСurrency__BTC"></p></td>
+    </tr>
+    <!-- ETH -->
+    <tr>  
+      <th><h2 class="eth">ETH</h2></th>
+      <td><input disabled value="0.005" id="RemunerationRate__ETH"></td>
+      <td>
+        <select id="WeeklyMultiplier__ETH">
+          <option selected value="1">1</option>
+          <option disabled value="2">2</option>
+        </select>
+      </td>
+      <td><input class="backlight-g" type="number" placeholder="ETH" id="NetworkPower__ETH"></td>
+      <td><p id="BlockReward__ETH"></p></td>
+      <td><p id="DailyReward__ETH"></p></td>
+      <td><input class="backlight-g" type="number" placeholder="ETH за 1 RLT" id="Rate__ETH"></td>
+      <td><p id="DailyRewardСurrency__ETH"></p></td>
+    </tr>
+    <!-- BNB -->
+    <tr>  
+      <th><h2 class="bnb">BNB</h2></th>
+      <td><input disabled value="0.012" id="RemunerationRate__BNB"></td>
+      <td>
+        <select id="WeeklyMultiplier__BNB">
+          <option selected value="1">1</option>
+          <option disabled value="2">2</option>
+        </select>
+      </td>
+      <td><input class="backlight-g" type="number" placeholder="BNB" id="NetworkPower__BNB"></td>
+      <td><p id="BlockReward__BNB"></p></td>
+      <td><p id="DailyReward__BNB"></p></td>
+      <td><input class="backlight-g" type="number" placeholder="BNB за 1 RLT" id="Rate__BNB"></td>
+      <td><p id="DailyRewardСurrency__BNB"></p></td>
+    </tr>    
+    <!-- MATIC -->
+    <tr>  
+      <th><h2 class="matic">MATIC</h2></th>
+      <td><input disabled value="3" id="RemunerationRate__MATIC"></td>
+      <td>
+        <select id="WeeklyMultiplier__MATIC">
+          <option selected value="1">1</option>
+          <option disabled value="2">2</option>
+        </select>
+      </td>
+      <td><input class="backlight-g" type="number" placeholder="MATIC" id="NetworkPower__MATIC"></td>
+      <td><p id="BlockReward__MATIC"></p></td>
+      <td><p id="DailyReward__MATIC"></p></td>
+      <td><input class="backlight-g" type="number" placeholder="MATIC за 1 RLT" id="Rate__MATIC"></td>
+      <td><p id="DailyRewardСurrency__MATIC"></p></td>
+    </tr>
+    <!-- DOGE -->
+    <tr>  
+      <th><h2 class="doge">DOGE</h2></th>
+      <td><input disabled value="20" id="RemunerationRate__DOGE"></td>
+      <td>
+        <select id="WeeklyMultiplier__DOGE">
+          <option selected value="1">1</option>
+          <option disabled value="2">2</option>
+        </select>
+      </td>
+      <td><input class="backlight-g" type="number" placeholder="DOGE" id="NetworkPower__DOGE"></td>
+      <td><p id="BlockReward__DOGE"></p></td>
+      <td><p id="DailyReward__DOGE"></p></td>
+      <td><input class="backlight-g" type="number" placeholder="DOGE за 1 RLT" id="Rate__DOGE"></td>
+      <td><p id="DailyRewardСurrency__DOGE"></p></td>
+    </tr>
+  </table>
+
+  <button class="btn__result backlight-g" onclick="result()" id="value">
+    <h3 id="lang__btn" class="lang-btn">Посчитать</h3>
+  </button> 
+
+  <script src="js/main.js"></script>
 </body>
 </html>

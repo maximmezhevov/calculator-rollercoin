@@ -4,6 +4,71 @@
   box-sizing: border-box;
 }
 
-.h1 {
-  color: red;
+.app {
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 14px; 
+}
+
+body h1 { 
+  font-size: 17px; 
+  margin-bottom: 10px;
+  cursor: default;
+}
+table h2{ font-size: 12px; text-align: left; }
+table h3 { font-size: 12px; }
+button h3 { font-size: 14px; }
+table p { text-align: right; }
+
+th, td {
+  border: 1px solid rgba(220, 220, 220, 0.50);
+  padding: 0 2px 0 2px;
+}
+
+th { 
+  width: 86px; 
+  cursor: default;
+}
+
+table input {
+  width: 100%;
+  text-align: right;
+  padding-right: 1px;
+}
+
+input::-webkit-inner-spin-button { display: none; }
+
+input::placeholder { 
+  font-size: 10px; 
+  text-align: center;
+  white-space: pre-wrap;
+}
+
+.input__total-power, .input__block-time  {
+  height: 157px;
+  text-align: center;
+}
+
+table select { width: 100%; }
+
+select { cursor: pointer }
+
+.select__total-power { margin-top: 2px; }
+
+button { cursor: pointer }
+
+.btn__result {
+  margin-top: 10px;
+  padding: 0 3px 0 3px;
+  background: none;
+}
+
+.backlight-g {
+  border: 2px solid rgba(46, 139, 86, 0.75);
+  border-radius: 3px;
 }
